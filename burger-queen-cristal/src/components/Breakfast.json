@@ -2,23 +2,28 @@
     "Breakfast":[
         {
             "title":"Café Americano",
-            "Precio":"$5.00"
+            "Precio":"$5.00",
+            "valor":5
         },
         {
             "title":"Café Con Leche",
-            "Precio":"$7.00"
+            "Precio":"$7.00",
+            "valor":7
         },
         {
             "title":"Sandwich de jamón y queso",
-            "Precio":"$10.00"
+            "Precio":"$10.00",
+            "valor":10
         },
         {
             "title":"Jugo de frutas natural",
-            "Precio":"$7.00"
+            "Precio":"$7.00",
+            "valor":7
         },
         {
             "title":"Chilaquiles",
-            "Precio":"$25.00"
+            "Precio":"$25.00",
+            "valor":25
         }
     ]
 }

@@ -25,3 +25,21 @@ color: azure;
   width: 10rem;
   
 }
+.porta{
+  float: right;
+}
+.cardTotal{
+  width: 40%;
+  float: right;
+  margin: 2rem;
+}
+.accordion{
+  margin: 2rem;
+}
+.Input-number{
+  float:right;
+  margin: none;
+  text-align: center;
+  border-radius: 0.5rem;
+  border: 2px solid #39c;
+}
