@@ -1,0 +1,44 @@
+{
+    "OtherFood":[
+        {
+            "title":"Hamburguesa simple",
+            "Precio":"$10.00",
+            "valor":10
+        },
+        {
+            "title":"Hamburguesa doble",
+            "Precio":"$15.00",
+            "valor":15
+        },
+        {
+            "title":"Papas fritas",
+            "Precio":"$5.00",
+            "valor":5
+        },
+        {
+            "title":"Aros de cebolla",
+            "Precio":"$5.00",
+            "valor":5
+        },
+        {
+            "title":"Agua 500ml",
+            "Precio":"$5.00",
+            "valor":5
+        },
+        {
+            "title":"Agua 750ml",
+            "Precio":"$8.00",
+            "valor":8
+        },
+        {
+            "title":"Bebida/gaseosa 500ml",
+            "Precio":"$8.00",
+            "valor":8
+        },
+        {
+            "title":"Bebida/gaseosa 750ml",
+            "Precio":"$12.00",
+            "valor":12
+        }
+    ]
+}
