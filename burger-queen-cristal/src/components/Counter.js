@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { BrowserRouter, Route, Link } from "react-router-dom";
 import Food from './Food';
 import FoodAndDinner from './Food-dinner';
 
@@ -7,7 +7,7 @@ import FoodAndDinner from './Food-dinner';
  class Counter extends Component{
      render(){
          return(
-           
+           <BrowserRouter>
             <div className="accordion" id="accordionExample">
   <div className="card1">
     <div className="card-header" id="headingOne">
@@ -40,7 +40,7 @@ import FoodAndDinner from './Food-dinner';
     </div>
   </div>
 </div>
-
+</BrowserRouter>
          );
      }
  }

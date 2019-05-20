@@ -5,36 +5,39 @@ import { Breakfast } from './Breakfast.json';
 
 class Food extends Component{
 
-constructor(){
-  super();
+constructor(props){
+  super(props);
   this.state = {
-    Breakfast
+    order:[]
   }
-}  
+  
+} 
+// onAddOrder = () =>{
+//   this.setState(state =>{
+//     const order = state.list.concat(state.order);
+//   console.log(order);
 
+//   })
+  
+// }
     render(){
-      const Breakfast = this.state.Breakfast.map((breakfast, i) => {
-        return (
-          
-  <div className="col-sm-6">
-    <div className="card">
-      <div className="card-body">
-        <h5 className="card-title">{breakfast.title}</h5>
-        <p className="card-text">{breakfast.Precio}</p>
-        <button className="btn btn-primary">Pedir</button>
-      </div>
-    </div>
-  </div>
-
-        )
-      })
       
         return(
           <div className="row">
-            {Breakfast}
+          {Breakfast.map((breakfast, index ) =>
+          <div className="col-sm-6" key={index}>
+          <div className="card">
+          <div className="card-body">
+            <h5 className="card-title">{breakfast.title}</h5>
+            <p className="card-text">{breakfast.Precio}</p>
+            <button onClick={this.onAddOrder} type="submit" className="btn btn-primary">Pedir</button>
+          </div>
+        </div>
             </div>
-        );
-    }
+             )}
+            </div>
+       
+        )}
 
 }
 export default Food;
