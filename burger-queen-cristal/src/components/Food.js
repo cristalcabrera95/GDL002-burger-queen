@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-
-import { Breakfast } from './Breakfast.json';
+import firebase, { initializeApp } from 'firebase'
+import {config} from './firebaseData'
+import 'firebase/database'
+import { breakfast } from './Breakfast.json';
 
 
 class Food extends Component{
@@ -8,36 +10,71 @@ class Food extends Component{
 constructor(props){
   super(props);
   this.state = {
+    breakfast,
     order:[]
   }
-  
+  this.app = initializeApp(config);
+  this.db = this.app.database().ref().child('OrderFood')
 } 
-// onAddOrder = () =>{
-//   this.setState(state =>{
-//     const order = state.list.concat(state.order);
-//   console.log(order);
 
-//   })
-  
+// componentDidMount (){
+//   const {Order} = this.state;
+// this.db.on("child_added", snap =>{
+// Order.push({
+//   nameOfEvent,
+//   priceOfEvent
+// })
+// this.setState({Order})
+// })  
 // }
-    render(){
+
+addOrder = (event) =>{
+  const target = event.currentTarget;
+  const nameOfEvent = target.getAttribute("name")
+  const priceOfEvent = target.getAttribute("value")
+  
+  console.log(nameOfEvent, priceOfEvent);
+
+  const object= {
+    nameOfEvent,
+    priceOfEvent
+  }
+  
+   this.setState({
+     order:[...this.state.order, object]
+   }, ()=> { const totalfood = document.getElementsByClassName("totalfood")[0]
+   totalfood.innerHTML=""
+   this.state.order.map((item, i)=>{
+    totalfood.innerHTML += "<h5 className='card-title'>" + item.nameOfEvent + item.priceOfEvent + "</h5>"
+   })
+     console.log(this.state.order)
+   })
+  
+  
+}
+
+render(){
+  const breakfast = this.state.breakfast.map((breakfast, e) => {
+    return (
       
-        return(
-          <div className="row">
-          {Breakfast.map((breakfast, index ) =>
-          <div className="col-sm-6" key={index}>
-          <div className="card">
-          <div className="card-body">
-            <h5 className="card-title">{breakfast.title}</h5>
-            <p className="card-text">{breakfast.Precio}</p>
-            <button onClick={this.onAddOrder} type="submit" className="btn btn-primary">Pedir</button>
-          </div>
-        </div>
-            </div>
-             )}
-            </div>
-       
-        )}
+<div className="col-sm-6"  key={e}>
+<div className="card">
+  <div className="card-body">
+    <h5 className="card-title">{breakfast.title}</h5>
+    <p className="card-text">{breakfast.Precio}</p>
+    <button key = {e} name={breakfast.title} value={breakfast.Precio} onClick={this.addOrder} className="btn btn-primary">Pedir</button>
+  </div>
+</div>
+</div>
+
+    )
+  })
+  return(
+    <div className="row">
+      {breakfast}
+      </div>
+  );
+}
 
 }
 export default Food;

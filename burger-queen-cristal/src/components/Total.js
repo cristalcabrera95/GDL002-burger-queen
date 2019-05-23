@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Breakfast } from './Breakfast.json';
+
 
 
 
@@ -13,8 +13,8 @@ class Total extends Component{
   {/* <input type="number" min="1" className="Input-number"></input> */}
   {/* <h5 className="card-title">Numero de Cliente</h5> */}
    <br></br>
-    <p className="card-text">{this.state}</p>
-    <button className="btn btn-primary">Enviar Pedido</button>
+    <p className="card-text totalfood" ></p>
+    <button className="btn btn-primary" onClick={prompt} >Enviar Pedido</button>
   </div>
 </div>
         )
