@@ -45,7 +45,7 @@ addOrder = (event) =>{
    }, ()=> { const totalfood = document.getElementsByClassName("totalfood")[0]
    totalfood.innerHTML=""
    this.state.order.map((item, i)=>{
-    totalfood.innerHTML += "<h5 className='card-title'>" + item.nameOfEvent + item.priceOfEvent + "</h5>"
+    totalfood.innerHTML += "<li class='list-group-item'>" + item.nameOfEvent + item.priceOfEvent + "</li>"
    })
      console.log(this.state.order)
    })
