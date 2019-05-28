@@ -24,8 +24,13 @@ addOrderDinner = (event) =>{
   }
   this.setState({
     OrderDinner:[...this.state.OrderDinner, object]
-  }, ()=> console.log(this.state.OrderDinner)
-  )
+  }, ()=> { const totalfood = document.getElementsByClassName("totalfood")[0]
+  totalfood.innerHTML=""
+  this.state.order.map((item, e)=>{
+   totalfood.innerHTML += "<li class='list-group-item'>" + item.nameOfTarget + item.priceOfTarget + "</li>"
+  })
+    console.log(this.state.order)
+  })
 }
 
     render(){
@@ -44,6 +49,7 @@ addOrderDinner = (event) =>{
 
         )
       })
+      
       
         return(
           <div className="row">
