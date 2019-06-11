@@ -43,3 +43,12 @@ color: azure;
   border-radius: 0.5rem;
   border: 2px solid #39c;
 }
+.menu{
+  margin: 1rem;
+}
+.navbar-brand{
+  color: beige;
+}
+.eraser{
+  float: right;
+}
